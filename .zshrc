@@ -8,8 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="jonathan"
 ZSH_THEME="awesomepanda"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -102,19 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# === Add developer tools to PATH dynamically ===
 
-# Load NVM (Node Version Manager)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-# Load PNPM
-export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-# Add local bin folders
-export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-alias up="docker compose up -d"
-alias down="docker compose down"
-alias build="docker composer up --build -d"
-figlet echobash
+# Load custom aliases
+[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
